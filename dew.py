@@ -3,7 +3,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/customer-segmentation', methods=['GET'])
+@app.route('/seggs', methods=['GET'])
 def customer_segmentation():
     orders = []
     customers = []
