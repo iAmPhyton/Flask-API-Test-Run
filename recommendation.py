@@ -24,12 +24,12 @@ def recommendation():
     data_month = data[data['Date'].dt.month == month]
 
     # Perform analysis to identify trends or anomalies
-    # checking if the mean value is higher than average
-    mean_value = data_month['Value'].mean()
-    average_value = data['Value'].mean()
+    # checking if the median value is higher than average
+    median_value = data_month['Value'].median()
+    average_value = data['Value'].median()  # Using median instead of mean
 
-    if mean_value > average_value:
-        recommendation_text = "The average value for this month is higher than usual."
+    if median_value > average_value:
+        recommendation_text = "The median value for this month is higher than usual."
     else:
         recommendation_text = "No significant trend or anomaly detected for this month."
 
@@ -37,4 +37,4 @@ def recommendation():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) 
